@@ -83,7 +83,7 @@ const UsersHomePage = () => {
                         <input type="file" multiple name="images" id="images" required className="w-full rounded-[5px] mb-5 " onChange={handleFileChange} />
                     </label>
 
-                    {/* <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-[4px]">Submit</button> */}
+                   
 
 
                     <button type="submit" disabled={loading} className="bg-blue-500 text-white px-4 flex items-center py-2 rounded-[4px]">

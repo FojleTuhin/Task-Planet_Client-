@@ -14,6 +14,7 @@ import SecondLoginPage from './shared/SecondLoginPage';
 import Login from './shared/Login';
 import ThirdPage from './shared/ThirdPage';
 import UsersHomePage from './pages/UsersHomePage';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Login />
+      },
+      {
+        path:'/home',
+        element:<Home/>
       },
       {
         path: '/secondLoginPage',
