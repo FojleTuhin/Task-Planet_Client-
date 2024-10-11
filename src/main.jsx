@@ -12,6 +12,7 @@ import {
 import Root from './pages/Root';
 import SecondLoginPage from './shared/SecondLoginPage';
 import Login from './shared/Login';
+import ThirdPage from './shared/ThirdPage';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/secondLoginPage',
         element: <SecondLoginPage />
+      },
+      {
+        path:'/thirdPage',
+        element:<ThirdPage/>
       }
     ]
   },

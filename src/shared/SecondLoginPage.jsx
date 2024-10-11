@@ -1,6 +1,7 @@
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { FaArrowLeftLong, FaGoogle } from "react-icons/fa6";
 import { MdAttachEmail, MdOutlinePhoneInTalk } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const SecondLoginPage = () => {
     return (
@@ -20,14 +21,14 @@ const SecondLoginPage = () => {
 
 
                 <div className="flex items-center gap-5 my-[35px]">
-                    <hr className="bg-slate-400 w-full divide-x divide-dashed"/>
+                    <hr className="bg-slate-400 w-full divide-x divide-dashed" />
                     Or
-                    <hr className="bg-slate-400 w-full divide-x divide-dashed"/>
+                    <hr className="bg-slate-400 w-full divide-x divide-dashed" />
                 </div>
 
                 <div className="flex gap-5">
-                    <p className="flex items-center gap-2 text-[#575757] text-[13px] font-bold border-[1px] border-[#0b59f9] px-[10px] py-2 w-full text-center justify-center rounded-[5px]"><MdOutlinePhoneInTalk className="h-5 w-5"/>MOBILE</p>
-                    <p className="flex items-center gap-2 text-[#575757] text-[13px] font-bold border-[1px] border-[#0b59f9] px-[10px] py-2 w-full text-center justify-center rounded-[5px]"><MdAttachEmail  className="h-5 w-5"/>EMAIL</p>
+                    <Link to='/thirdPage' className=" text-[#575757] text-[13px] font-bold border-[1px] border-[#0b59f9] px-[10px] py-2 w-full  rounded-[5px]"><p className="flex items-center gap-2 text-center justify-center"><MdOutlinePhoneInTalk className="h-5 w-5" />MOBILE</p></Link>
+                    <Link to='/thirdPage' className=" text-[#575757] text-[13px] font-bold border-[1px] border-[#0b59f9] px-[10px] py-2 w-full  rounded-[5px]"><p className="flex items-center gap-2 text-center justify-center"><MdAttachEmail className="h-5 w-5" />EMAIL</p></Link>
                 </div>
 
             </div>
