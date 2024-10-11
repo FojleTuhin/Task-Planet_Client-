@@ -10,11 +10,23 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from './pages/Root';
+import SecondLoginPage from './shared/SecondLoginPage';
+import Login from './shared/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Root></Root>
+    element: <Root></Root>,
+    children: [
+      {
+        path: '/',
+        element: <Login />
+      },
+      {
+        path: '/secondLoginPage',
+        element: <SecondLoginPage />
+      }
+    ]
   },
 ]);
 
