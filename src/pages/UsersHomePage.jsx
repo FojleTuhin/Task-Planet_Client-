@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { BeatLoader, BounceLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 const UsersHomePage = () => {
     const [images, setImages] = useState([]);

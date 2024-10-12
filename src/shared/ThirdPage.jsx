@@ -1,15 +1,21 @@
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import useAxiosPublic from "../hooks/UseAxiosPublic";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useContext, useState } from "react";
+import { AuthContext } from "../provider/Provider";
 
 const ThirdPage = () => {
 
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const [error, setError] = useState('')
+    const {saveUser} = useContext(AuthContext);
+    
+
+    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -21,31 +27,39 @@ const ThirdPage = () => {
         }
 
         axiosPublic.post('/login', user)
-        .then(data => {
-            console.log(data);
-            if (data.status === 200) {
-                navigate('/home')
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Log in Successfull",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+            .then(data => {
+                console.log(data);
+                if (data.status === 200) {
+                    navigate('/home')
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Log in Successfull",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
 
-            }
-            else {
-                setError(data.response.data.message);
-                console.log('something wrong');
-            }
+                }
+                else {
+                    setError(data.response.data.message);
+                    console.log('something wrong');
+                }
 
-            
-        })
 
-        .catch(error => {
-            setError(error.response.data.message);
-            console.log(error);
-        });
+                axiosPublic.post('/jwt', email)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token);
+                            localStorage.setItem('userInfo', JSON.stringify(user));
+                            saveUser(user)
+                        }
+                    })
+            })
+
+            .catch(error => {
+                setError(error.response.data.message);
+                console.log(error);
+            });
 
 
     }
