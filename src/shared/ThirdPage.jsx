@@ -5,6 +5,7 @@ import { AuthContext } from "../provider/Provider";
 import Swal from "sweetalert2";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { BeatLoader } from "react-spinners";
 
 
 const ThirdPage = () => {
@@ -13,6 +14,7 @@ const ThirdPage = () => {
     const navigate = useNavigate();
     const [error, setError] = useState('')
     const { saveUser } = useContext(AuthContext);
+    const [loading, setLoading] = useState(false);
 
 
 
@@ -21,6 +23,7 @@ const ThirdPage = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const pass = e.target.password.value;
+        setLoading(true);
 
         const user = {
             email,
@@ -85,7 +88,7 @@ const ThirdPage = () => {
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full border-b-[1px] border-b-[#aaa] py-[7px] px-[9px] bg-[#f5f5f5] text-[11px]" />
                         <p className="text-right text-[#0b59f9] text-[13px] font-bold mt-[5px]">Forgot Password?</p>
 
-                        <button className="py-2 px-[10px] w-full bg-[#808080] text-center text-white font-bold mt-10 rounded-[5px]">LOGIN</button>
+                        <button className="py-2 px-[10px] w-full bg-[#808080] text-center text-white font-bold mt-10 rounded-[5px]">{loading ? <BeatLoader /> : 'LOGIN'}</button>
                     </form>
 
                     <p className="mb-2 text-red-500 text-center mt-5">{error}</p>

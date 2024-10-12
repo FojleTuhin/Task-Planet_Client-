@@ -6,7 +6,7 @@ const Login = () => {
         <div>
             <div className="w-[425px] min-h-screen bg-[#e6b325] mx-auto flex flex-col justify-between">
                 <div className="p-[10px]">
-                    <img src="/public/onboard-1_zeprst.png" alt="" />
+                    <img src="https://i.ibb.co.com/yBs5RGs/onboard-1-zeprst.png" alt="" />
                     <div className="text-center">
                         <p className="text-[20px] font-semibold mb-5">A Platform For Online Earners</p>
                         <p className="text-[12px]">Task Planet Is An Online Money Earning Website For The Individuals Looking For Small Tasks And Getting Paid For It</p>
