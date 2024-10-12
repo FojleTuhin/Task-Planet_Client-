@@ -1,20 +1,21 @@
-import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../hooks/UseAxiosPublic";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/Provider";
+import Swal from "sweetalert2";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 
 const ThirdPage = () => {
 
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const [error, setError] = useState('')
-    const {saveUser} = useContext(AuthContext);
-    
+    const { saveUser } = useContext(AuthContext);
 
-    
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -87,11 +88,13 @@ const ThirdPage = () => {
                         <button className="py-2 px-[10px] w-full bg-[#808080] text-center text-white font-bold mt-10 rounded-[5px]">LOGIN</button>
                     </form>
 
-
-
                     <p className="mb-2 text-red-500 text-center mt-5">{error}</p>
+                    <Link to='/register'><p className="text-center text-[#0b59f9] text-[13px] font-bold mt-[5px]">New? register now</p></Link>
 
                 </div>
+
+
+
 
             </div>
         </div>

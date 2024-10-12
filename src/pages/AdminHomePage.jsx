@@ -46,7 +46,7 @@ const AdminHomePage = () => {
 
     }
     return (
-        <div className="bg-[#F6FBE9] min-h-screen">
+        <div className="bg-[#F6FBE9] min-h-screen ">
             <div className="flex justify-between  py-[13px] mb-16 px-20">
                 <p className="text-[15px] font-semibold">Home</p>
                 <div className="flex gap-[5px] ">
@@ -68,23 +68,23 @@ const AdminHomePage = () => {
 
 
 
-            <div className="mt-[50px] medium:mt-20 laptop:mt-[100px]   tablet:p-4 medium:p-[50px] ">
+            <div className="mt-[50px] medium:mt-20 laptop:mt-[100px]   tablet:p-4 medium:p-[50px] px-5">
                 <div className="overflow-x-auto">
                     <table className="table border-collapse mx-auto">
                         {/* Table head */}
                         <thead>
                             <tr className="border-b-0 border-[#DCF1A7] ">
-                                <th className="border-r border-[#DCF1A7] text-[20px] text-[#FFFFFF] font-medium  pr-[30px] pl-0"><p className='bg-[#234338] py-4 px-6 rounded-[8px] '>Email</p></th>
-                                <th className="border-r border-[#DCF1A7] text-[20px] text-[#FFFFFF] font-medium  px-[30px]"><p className='bg-[#234338] py-4 px-6 rounded-[8px] '>Name</p></th>
-                                <th className="border-r border-[#DCF1A7] text-[20px] text-[#FFFFFF] font-medium  px-[30px]"><p className='bg-[#234338] py-4 px-6 rounded-[8px] '>Social media handle</p></th>
-                                <th className='px-[30px] text-[20px] text-[#FFFFFF] font-medium '><p className='bg-[#234338] py-4 px-6  rounded-[8px] '>Photos</p></th>
+                                <th className="border-r border-[#DCF1A7]  text-[#FFFFFF] font-medium  pr-[30px] pl-0 text-[14px] "><p className='bg-[#234338] py-2 px-6 rounded-[8px] '>Email</p></th>
+                                <th className="border-r border-[#DCF1A7]  text-[#FFFFFF] font-medium  px-[30px] text-[14px] "><p className='bg-[#234338] py-2 px-6 rounded-[8px] '>Name</p></th>
+                                <th className="border-r border-[#DCF1A7]  text-[#FFFFFF] font-medium  px-[30px] text-[14px] "><p className='bg-[#234338] py-2 px-6 rounded-[8px] '>Social media handle</p></th>
+                                <th className='px-[30px] text-[14px]  text-[#FFFFFF] font-medium '><p className='bg-[#234338] py-2 px-6  rounded-[8px] '>Photos</p></th>
                             </tr>
                         </thead>
                         <tbody >
 
                             {
                                 allUser.map((user, index) => (
-                                    <tr key={index} className="border-b border-[#DCF1A7] text-[#262626] text-[18px] font-medium ">
+                                    <tr key={index} className="border-b border-[#DCF1A7] text-[#262626] text-[14px] font-medium ">
                                         <td className="text-center">{user.email}</td>
                                         <td className="text-center">{user.name}</td>
                                         <td className="text-center">{user.socialMediaHandle}</td>

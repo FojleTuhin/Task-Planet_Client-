@@ -7,6 +7,7 @@ import { AuthContext } from "../provider/Provider";
 import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../hooks/UseAxiosPublic";
 import Swal from "sweetalert2";
+import useUserRole from "../hooks/useUserRole";
 
 const UsersHomePage = () => {
     const [images, setImages] = useState([]);
@@ -16,6 +17,7 @@ const UsersHomePage = () => {
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
     const { user } = useContext(AuthContext);
+    const [userRole, refetch]= useUserRole();
     
 
 
@@ -92,6 +94,7 @@ const UsersHomePage = () => {
                         timer: 1500
                     });
 
+                    refetch();
 
                 }
             })
