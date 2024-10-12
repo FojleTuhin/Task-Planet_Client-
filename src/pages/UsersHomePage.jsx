@@ -16,6 +16,7 @@ const UsersHomePage = () => {
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
     const { user } = useContext(AuthContext);
+    
 
 
 
@@ -76,8 +77,7 @@ const UsersHomePage = () => {
         console.log(info);
         e.target.reset();
 
-        // // Send the data (name, social media handle, and image URLs) to the backend
-        // await axios.post('http://localhost:5000/submission', info);
+
 
 
         axiosPublic.put(`/updateUser/${user.email}`, info)

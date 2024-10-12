@@ -17,6 +17,7 @@ import UsersHomePage from './pages/UsersHomePage';
 import Home from './pages/Home';
 import Provider from './provider/Provider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import LinkPage from './pages/LinkPage';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,12 @@ const router = createBrowserRouter([
       {
         path: '/usersHomePage',
         element: <UsersHomePage />
+      },
+      {
+        path:'/linkPage',
+        element:<LinkPage></LinkPage>
+
+
       }
     ]
   },
