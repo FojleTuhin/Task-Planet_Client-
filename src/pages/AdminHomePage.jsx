@@ -46,7 +46,7 @@ const AdminHomePage = () => {
 
     }
     return (
-        <div className="bg-[#F6FBE9] min-h-screen ">
+        <div className=" min-h-screen ">
             <div className="flex justify-between  py-[13px] mb-16 px-20">
                 <p className="text-[15px] font-semibold">Home</p>
                 <div className="flex gap-[5px] ">
