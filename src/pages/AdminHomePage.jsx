@@ -88,7 +88,7 @@ const AdminHomePage = () => {
                                         <td className="text-center">{user.email}</td>
                                         <td className="text-center">{user.name}</td>
                                         <td className="text-center">{user.socialMediaHandle}</td>
-                                        <td className="flex gap-2 text-center py-5 border-[#DCF1A7]">
+                                        <td className="flex gap-2 flex-wrap text-center py-5 border-[#DCF1A7] max-w-[300px] ">
                                             {/* Check if photos exist and is an array */}
                                             {user.photos && Array.isArray(user.photos) && user.photos.length > 0 ? (
                                                 user.photos.map((photo, i) => (
