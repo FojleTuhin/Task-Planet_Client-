@@ -53,7 +53,7 @@ const UsersHomePage = () => {
             try {
                 const res = await axios.post('https://api.imgbb.com/1/upload', formData, {
                     params: {
-                        key: '18a5e0c9cfa0a48351625ba4651fec48', // ImgBB API key
+                        key: `${import.meta.env.VITE_IMGBB_API_KEY}`, // ImgBB API key
                     },
                 });
 
