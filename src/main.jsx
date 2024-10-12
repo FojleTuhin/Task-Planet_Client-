@@ -15,6 +15,8 @@ import Login from './shared/Login';
 import ThirdPage from './shared/ThirdPage';
 import UsersHomePage from './pages/UsersHomePage';
 import Home from './pages/Home';
+import Provider from './provider/Provider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const router = createBrowserRouter([
   {
@@ -26,27 +28,35 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path:'/home',
-        element:<Home/>
+        path: '/home',
+        element: <Home />
       },
       {
         path: '/secondLoginPage',
         element: <SecondLoginPage />
       },
       {
-        path:'/thirdPage',
-        element:<ThirdPage/>
+        path: '/thirdPage',
+        element: <ThirdPage />
       },
       {
-        path:'/usersHomePage',
-        element:<UsersHomePage/>
+        path: '/usersHomePage',
+        element: <UsersHomePage />
       }
     ]
   },
 ]);
 
+
+const queryClient = new QueryClient();
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <Provider>
+        <RouterProvider router={router} />
+      </Provider>
+    </QueryClientProvider>
+
   </StrictMode>,
 )
